@@ -18,7 +18,7 @@ pipeline {
             sh 'pwd'
             sh 'ls -l'
             sh 'df'
-            sh 'node -v'
+            //sh 'node -v'
             sh 'printenv'
          }
       }
