@@ -1,7 +1,11 @@
 pipeline {
-   agent {
+   agent any /*{
       docker {image 'node:8.5.0'} 
-   }   
+   }  */
+   
+   environment {
+      GLOBAL_JEAN='Jean Paul Drlik'
+   }
    
    triggers {
       pollSCM('* * * * *')
@@ -15,6 +19,7 @@ pipeline {
             sh 'ls -l'
             sh 'df'
             sh 'node -v'
+            sh 'printenv'
          }
       }
       stage('Test') {
