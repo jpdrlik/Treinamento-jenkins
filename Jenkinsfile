@@ -4,21 +4,24 @@ pipeline {
    stages {
       stage('Build') {
          steps {
-            //sh 'make'
             echo 'Building...'
+            sh 'pwd'
+            sh 'ls -l'
          }
       }
       stage('Test') {
          steps {
-            //sh 'make check'
-            //junit 'reports/**/*.xml'
             echo 'Testing...'
+            sh 'cd /tmp'
+            sh 'ls -l'
          }
       }
       stage('Deploy') {
          steps {
-            //sh 'make publish'
             echo 'Deploying...'
+            sh 'cd'
+            sh 'pwd'
+            sh 'ls -l'
          }
       }
    }
