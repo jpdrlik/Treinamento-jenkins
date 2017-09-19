@@ -2,9 +2,15 @@ pipeline {
    agent any /*{
       docker {image 'node:8.5.0'} 
    }  */
-   
+   /*
    environment {
       GLOBAL_JEAN='Jean Paul Drlik'
+   }
+   */
+   
+   parameters {
+      string(name: 'DEPLOYER', defaultValue: 'Mr Jenkins', description: 'Who are you?')
+      choice(name: 'DEPLOY_TO', choices: 'development\nproduction', description: 'Deploy to...')      
    }
    
    triggers {
