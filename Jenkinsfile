@@ -36,12 +36,12 @@ pipeline {
             sh 'cat arquivo-texto3'
          }
       }
-      stage('Deploy') {
+      stage('Deploy PROD') {
          steps {
-            echo 'Deploying...'
-            sh 'cd'
-            sh 'pwd'
-            sh 'ls -l'
+            timeout(time:1, unit:'DAYS'){
+               input message: 'Are you sure?'
+            }
+            echo 'Deploying...........................'
          }
       }
    }
