@@ -7,6 +7,7 @@ pipeline {
             echo 'Building...'
             sh 'pwd'
             sh 'ls -l'
+            sh 'df'
          }
       }
       stage('Test') {
