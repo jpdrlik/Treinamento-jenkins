@@ -1,5 +1,7 @@
 pipeline {
-   agent any
+   agent {
+      docker {image 'node:8.5.0'} 
+   }   
    
    triggers {
       pollSCM('* * * * *')
