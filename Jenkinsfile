@@ -19,6 +19,7 @@ pipeline {
             echo 'Testing...'
             sh 'cd /tmp'
             sh 'ls -l'
+            sh 'cat arquivo-texto3'
          }
       }
       stage('Deploy') {
