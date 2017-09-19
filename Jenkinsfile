@@ -41,7 +41,9 @@ pipeline {
             timeout(time:1, unit:'DAYS'){
                input message: 'Are you sure?'
             }
-            sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.9.116 "ls -al"'
+            sshagent (credentials: ['servidor-treinamento']) {
+               sh 'ssh -o StrictHostKeyChecking=no ubuntu@172.31.9.116 "ls -al"'
+            }
             echo 'Deploying and connecting to remote hots.......'
          }
       }
